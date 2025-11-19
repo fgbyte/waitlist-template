@@ -1,46 +1,45 @@
-# Astro Starter Kit: Basics
+## How to use this template
 
-```sh
-bun create astro@latest -- --template basics
+Click on **Use this template** at the top of GitHub.
+
+Create your new repository.
+
+---
+To keep it updated with the original template:
+
+
+### 1.  
+```bash
+git remote add template https://github.com/fgbyte/waitlist-template.git
 ```
+- This adds a new **remote** called `template` pointing to the original template repository.  
+- You’ll now have two remotes: usually `origin` (your own repo) and `template` (the upstream template).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+### 2.  
+```bash
+git fetch template
 ```
+- This downloads all the branches and commits from the `template` remote into your local Git.  
+- It doesn’t change your files yet — it just makes the template’s code available locally under references like `template/main`.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-## 🧞 Commands
+### 3.  
+```bash
+git merge template/main
+```
+- This merges the latest changes from the template’s `main` branch into your current branch (usually `main`).  
+- If there are differences, Git will try to combine them.  
+- If there are conflicts (same lines changed in both repos), you’ll need to resolve them manually before completing the merge.
 
-All commands are run from the root of the project, from a terminal:
 
-| Command               | Action                                           |
-| :-------------------- | :----------------------------------------------- |
-| `bun install`         | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
+---
 
-## 👀 Want to learn more?
+💡 **Alternative:**  
+Instead of `merge`, you can use:  
+```bash
+git rebase template/main
+```  
+This reapplies your commits on top of the template’s commits, giving you a cleaner history.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
