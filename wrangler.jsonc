@@ -1,0 +1,5 @@
+{
+    "name": "waitlist-template",
+    "main": "src/server/index.ts",
+    "compatibility_date": "2025-11-25"
+}
